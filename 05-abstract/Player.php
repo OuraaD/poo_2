@@ -15,12 +15,13 @@ abstract class Player
      */
     protected int $score = 0;
 
-    public function __construct($name){
-    $this->name=$name;
+    public function __construct($name)
+    {
+        $this->name = $name;
     }
 
-    
-    
+
+
     /**
      * Get the value of name
      *
@@ -30,7 +31,7 @@ abstract class Player
     {
         return $this->name;
     }
-    
+
     /**
      * Set the value of name
      *
@@ -41,10 +42,10 @@ abstract class Player
     public function setName(string $name)
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * Get the value of life
      *
@@ -54,7 +55,7 @@ abstract class Player
     {
         return $this->life;
     }
-    
+
     /**
      * Set the value of life
      *
@@ -65,35 +66,35 @@ abstract class Player
     public function setLife(int $life)
     {
         $this->life = $life;
-        
+
         return $this;
     }
-    
+
     /**
      * Get the value of score
      *
      * @return  int
-     */ 
+     */
     public function getScore()
     {
         return $this->score;
     }
-    
+
     /**
      * Set the value of score
      *
      * @param  int  $score
      *
      * @return  self
-     */ 
+     */
     public function setScore(int $score)
     {
         $this->score = $score;
-        
+
         return $this;
     }
-    public function hit():void 
+    public function hit(): void
     {
-        $this->life= $this->life -10;
+        $this->life = $this->life - 10;
     }
 }
