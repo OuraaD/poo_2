@@ -5,40 +5,46 @@ Redéfinir la méthode carburant() pour qu'elle retourne la chaîne "diesel".
 Redéfinir la méthode nbTest() pour qu'elle retourne la valeur de nbTest() de la classe parente (Vehicule) augmentée de 30. -->
 
 <?php
+
 require_once './Vehicule.php';
+require_once './Engine.php';
 
-class Renault extends Vehicule
+class Renault extends Vehicule implements Engine
 {
-private string $carburant;
+    private string $carburant;
 
-public function carburant()
-{
-    return ('Diesel');
-}
-
-public function nbTtest()
-{
-    return parent::nbTest()+30;
-}
+    public function carburant()
+    {
+        return ('Diesel');
+    }
 
 
-/**
- * Get the value of carburant
- */ 
-public function getCarburant()
-{
-return $this->carburant;
-}
 
-/**
- * Set the value of carburant
- *
- * @return  self
- */ 
-public function setCarburant($carburant)
-{
-$this->carburant = $carburant;
+    /**
+     * Get the value of carburant
+     */
+    public function getCarburant()
+    {
+        return $this->carburant;
+    }
 
-return $this;
-}
+    /**
+     * Set the value of carburant
+     *
+     * @return  self
+     */
+    public function setCarburant($carburant)
+    {
+        $this->carburant = $carburant;
+
+        return $this;
+    }
+    public function nbTest()
+    {
+        return parent::nbTest() + 30;
+    }
+    public function start(User $user): string
+    {
+        return  "{$user->getPseudo()} à démarré la Renault";
+    }
 }

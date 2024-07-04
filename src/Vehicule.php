@@ -2,9 +2,9 @@
 
 abstract class Vehicule
 {
-    private int $nbTest = 100;
+    protected int $nbTest = 100;
 
-    final public function demarrer()
+    final public function demarrer():string
     {
         return ('Le véhciule est démarrée');
     }
